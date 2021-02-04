@@ -15,6 +15,8 @@
 		F6D29CC125CC281D00D0B11B /* Daily_Quests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */; };
 		F6D29CCC25CC281E00D0B11B /* Daily_QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CCB25CC281E00D0B11B /* Daily_QuestsTests.swift */; };
 		F6D29CD725CC281E00D0B11B /* Daily_QuestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */; };
+		F6D29CEC25CC292D00D0B11B /* YourDailyQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */; };
+		F6D29CF125CC293C00D0B11B /* YourWeeklyQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		F6D29CD225CC281E00D0B11B /* Daily QuestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily QuestsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsUITests.swift; sourceTree = "<group>"; };
 		F6D29CD825CC281E00D0B11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 2.xcdatamodel"; sourceTree = "<group>"; };
+		F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDailyQuests.swift; sourceTree = "<group>"; };
+		F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWeeklyQuests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +108,8 @@
 				F6D29CB625CC281A00D0B11B /* ContentView.swift */,
 				F6D29CB825CC281D00D0B11B /* Assets.xcassets */,
 				F6D29CBD25CC281D00D0B11B /* Persistence.swift */,
+				F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */,
+				F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */,
 				F6D29CC225CC281D00D0B11B /* Info.plist */,
 				F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */,
 				F6D29CBA25CC281D00D0B11B /* Preview Content */,
@@ -265,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D29CF125CC293C00D0B11B /* YourWeeklyQuests.swift in Sources */,
 				F6D29CC125CC281D00D0B11B /* Daily_Quests.xcdatamodeld in Sources */,
+				F6D29CEC25CC292D00D0B11B /* YourDailyQuests.swift in Sources */,
 				F6D29CBE25CC281D00D0B11B /* Persistence.swift in Sources */,
 				F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */,
 				F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */,
@@ -587,9 +596,10 @@
 		F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */,
 				F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */,
 			);
-			currentVersion = F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */;
+			currentVersion = F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */;
 			path = Daily_Quests.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
