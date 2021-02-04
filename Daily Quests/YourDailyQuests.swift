@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct YourDailyQuests: View {
     
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
+    
     @State private var isExpanded = false
     @State private var isExpanded2 = false
+    
+    let names = ["Tobias", "Toobias", "Tobbias"]
     
     var body: some View {
         
@@ -22,8 +28,15 @@ struct YourDailyQuests: View {
                 DisclosureGroup("Todays Quests", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
-                            Text("Hello").padding()
-                            Text("Hej")
+                                //ForEach in database
+                                ForEach(dailys) { daily in
+                                    
+                                    Text(daily.name ?? "Unknown").onTapGesture {
+                                        viewContext.delete(daily)
+                                        try? viewContext.save()
+                                    }
+                                    
+                                }
                         }
                     }
                 }.accentColor(.white)
@@ -51,10 +64,26 @@ struct YourDailyQuests: View {
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
             }.padding()
+            
+            NavigationLink(destination: AddDailyQuest()) {
+                Text("Add new quest")
+            }
+            
+//            Button("Add") {
+//
+//                let rName = names.randomElement()!
+//
+//
+//                let daily = Daily(context: self.viewContext)
+//                daily.name = "\(rName)"
+//
+//                try? self.viewContext.save()
+//            }
         }
     }
-    
 }
+
+
 
 
 struct YourDailyQuests_Previews: PreviewProvider {

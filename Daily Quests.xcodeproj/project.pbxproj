@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F64F0F0D25CC3F6A003E6A89 /* AddDailyQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F0F0C25CC3F6A003E6A89 /* AddDailyQuest.swift */; };
 		F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */; };
 		F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB625CC281A00D0B11B /* ContentView.swift */; };
 		F6D29CB925CC281D00D0B11B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D29CB825CC281D00D0B11B /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F64F0F0C25CC3F6A003E6A89 /* AddDailyQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDailyQuest.swift; sourceTree = "<group>"; };
 		F6D29CB125CC281A00D0B11B /* Daily Quests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Quests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsApp.swift; sourceTree = "<group>"; };
 		F6D29CB625CC281A00D0B11B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 2.xcdatamodel"; sourceTree = "<group>"; };
 		F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDailyQuests.swift; sourceTree = "<group>"; };
 		F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWeeklyQuests.swift; sourceTree = "<group>"; };
+		F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 				F6D29CC225CC281D00D0B11B /* Info.plist */,
 				F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */,
 				F6D29CBA25CC281D00D0B11B /* Preview Content */,
+				F64F0F0C25CC3F6A003E6A89 /* AddDailyQuest.swift */,
 			);
 			path = "Daily Quests";
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 				F6D29CC125CC281D00D0B11B /* Daily_Quests.xcdatamodeld in Sources */,
 				F6D29CEC25CC292D00D0B11B /* YourDailyQuests.swift in Sources */,
 				F6D29CBE25CC281D00D0B11B /* Persistence.swift in Sources */,
+				F64F0F0D25CC3F6A003E6A89 /* AddDailyQuest.swift in Sources */,
 				F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */,
 				F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */,
 			);
@@ -596,10 +601,11 @@
 		F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */,
 				F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */,
 				F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */,
 			);
-			currentVersion = F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */;
+			currentVersion = F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */;
 			path = Daily_Quests.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
