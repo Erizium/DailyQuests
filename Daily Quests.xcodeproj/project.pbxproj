@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */; };
+		F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB625CC281A00D0B11B /* ContentView.swift */; };
+		F6D29CB925CC281D00D0B11B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D29CB825CC281D00D0B11B /* Assets.xcassets */; };
+		F6D29CBC25CC281D00D0B11B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D29CBB25CC281D00D0B11B /* Preview Assets.xcassets */; };
+		F6D29CBE25CC281D00D0B11B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CBD25CC281D00D0B11B /* Persistence.swift */; };
+		F6D29CC125CC281D00D0B11B /* Daily_Quests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */; };
+		F6D29CCC25CC281E00D0B11B /* Daily_QuestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CCB25CC281E00D0B11B /* Daily_QuestsTests.swift */; };
+		F6D29CD725CC281E00D0B11B /* Daily_QuestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6D29CC825CC281E00D0B11B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6D29CA925CC281A00D0B11B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6D29CB025CC281A00D0B11B;
+			remoteInfo = "Daily Quests";
+		};
+		F6D29CD325CC281E00D0B11B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6D29CA925CC281A00D0B11B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6D29CB025CC281A00D0B11B;
+			remoteInfo = "Daily Quests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F6D29CB125CC281A00D0B11B /* Daily Quests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Quests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsApp.swift; sourceTree = "<group>"; };
+		F6D29CB625CC281A00D0B11B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F6D29CB825CC281D00D0B11B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6D29CBB25CC281D00D0B11B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F6D29CBD25CC281D00D0B11B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Quests.xcdatamodel; sourceTree = "<group>"; };
+		F6D29CC225CC281D00D0B11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D29CC725CC281E00D0B11B /* Daily QuestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily QuestsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D29CCB25CC281E00D0B11B /* Daily_QuestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsTests.swift; sourceTree = "<group>"; };
+		F6D29CCD25CC281E00D0B11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D29CD225CC281E00D0B11B /* Daily QuestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily QuestsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsUITests.swift; sourceTree = "<group>"; };
+		F6D29CD825CC281E00D0B11B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6D29CAE25CC281A00D0B11B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CC425CC281E00D0B11B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CCF25CC281E00D0B11B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6D29CA825CC281A00D0B11B = {
+			isa = PBXGroup;
+			children = (
+				F6D29CB325CC281A00D0B11B /* Daily Quests */,
+				F6D29CCA25CC281E00D0B11B /* Daily QuestsTests */,
+				F6D29CD525CC281E00D0B11B /* Daily QuestsUITests */,
+				F6D29CB225CC281A00D0B11B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6D29CB225CC281A00D0B11B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6D29CB125CC281A00D0B11B /* Daily Quests.app */,
+				F6D29CC725CC281E00D0B11B /* Daily QuestsTests.xctest */,
+				F6D29CD225CC281E00D0B11B /* Daily QuestsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6D29CB325CC281A00D0B11B /* Daily Quests */ = {
+			isa = PBXGroup;
+			children = (
+				F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */,
+				F6D29CB625CC281A00D0B11B /* ContentView.swift */,
+				F6D29CB825CC281D00D0B11B /* Assets.xcassets */,
+				F6D29CBD25CC281D00D0B11B /* Persistence.swift */,
+				F6D29CC225CC281D00D0B11B /* Info.plist */,
+				F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */,
+				F6D29CBA25CC281D00D0B11B /* Preview Content */,
+			);
+			path = "Daily Quests";
+			sourceTree = "<group>";
+		};
+		F6D29CBA25CC281D00D0B11B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F6D29CBB25CC281D00D0B11B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F6D29CCA25CC281E00D0B11B /* Daily QuestsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6D29CCB25CC281E00D0B11B /* Daily_QuestsTests.swift */,
+				F6D29CCD25CC281E00D0B11B /* Info.plist */,
+			);
+			path = "Daily QuestsTests";
+			sourceTree = "<group>";
+		};
+		F6D29CD525CC281E00D0B11B /* Daily QuestsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */,
+				F6D29CD825CC281E00D0B11B /* Info.plist */,
+			);
+			path = "Daily QuestsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6D29CB025CC281A00D0B11B /* Daily Quests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D29CDB25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily Quests" */;
+			buildPhases = (
+				F6D29CAD25CC281A00D0B11B /* Sources */,
+				F6D29CAE25CC281A00D0B11B /* Frameworks */,
+				F6D29CAF25CC281A00D0B11B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily Quests";
+			productName = "Daily Quests";
+			productReference = F6D29CB125CC281A00D0B11B /* Daily Quests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6D29CC625CC281E00D0B11B /* Daily QuestsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D29CDE25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsTests" */;
+			buildPhases = (
+				F6D29CC325CC281E00D0B11B /* Sources */,
+				F6D29CC425CC281E00D0B11B /* Frameworks */,
+				F6D29CC525CC281E00D0B11B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6D29CC925CC281E00D0B11B /* PBXTargetDependency */,
+			);
+			name = "Daily QuestsTests";
+			productName = "Daily QuestsTests";
+			productReference = F6D29CC725CC281E00D0B11B /* Daily QuestsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F6D29CD125CC281E00D0B11B /* Daily QuestsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D29CE125CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsUITests" */;
+			buildPhases = (
+				F6D29CCE25CC281E00D0B11B /* Sources */,
+				F6D29CCF25CC281E00D0B11B /* Frameworks */,
+				F6D29CD025CC281E00D0B11B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6D29CD425CC281E00D0B11B /* PBXTargetDependency */,
+			);
+			name = "Daily QuestsUITests";
+			productName = "Daily QuestsUITests";
+			productReference = F6D29CD225CC281E00D0B11B /* Daily QuestsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6D29CA925CC281A00D0B11B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					F6D29CB025CC281A00D0B11B = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					F6D29CC625CC281E00D0B11B = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = F6D29CB025CC281A00D0B11B;
+					};
+					F6D29CD125CC281E00D0B11B = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = F6D29CB025CC281A00D0B11B;
+					};
+				};
+			};
+			buildConfigurationList = F6D29CAC25CC281A00D0B11B /* Build configuration list for PBXProject "Daily Quests" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6D29CA825CC281A00D0B11B;
+			productRefGroup = F6D29CB225CC281A00D0B11B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6D29CB025CC281A00D0B11B /* Daily Quests */,
+				F6D29CC625CC281E00D0B11B /* Daily QuestsTests */,
+				F6D29CD125CC281E00D0B11B /* Daily QuestsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6D29CAF25CC281A00D0B11B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D29CBC25CC281D00D0B11B /* Preview Assets.xcassets in Resources */,
+				F6D29CB925CC281D00D0B11B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CC525CC281E00D0B11B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CD025CC281E00D0B11B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6D29CAD25CC281A00D0B11B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D29CC125CC281D00D0B11B /* Daily_Quests.xcdatamodeld in Sources */,
+				F6D29CBE25CC281D00D0B11B /* Persistence.swift in Sources */,
+				F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */,
+				F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CC325CC281E00D0B11B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D29CCC25CC281E00D0B11B /* Daily_QuestsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6D29CCE25CC281E00D0B11B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D29CD725CC281E00D0B11B /* Daily_QuestsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6D29CC925CC281E00D0B11B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6D29CB025CC281A00D0B11B /* Daily Quests */;
+			targetProxy = F6D29CC825CC281E00D0B11B /* PBXContainerItemProxy */;
+		};
+		F6D29CD425CC281E00D0B11B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6D29CB025CC281A00D0B11B /* Daily Quests */;
+			targetProxy = F6D29CD325CC281E00D0B11B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F6D29CD925CC281E00D0B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6D29CDA25CC281E00D0B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6D29CDC25CC281E00D0B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Daily Quests/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Daily Quests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-Quests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6D29CDD25CC281E00D0B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Daily Quests/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Daily Quests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-Quests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F6D29CDF25CC281E00D0B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Daily QuestsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-QuestsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily Quests.app/Daily Quests";
+			};
+			name = Debug;
+		};
+		F6D29CE025CC281E00D0B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Daily QuestsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-QuestsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily Quests.app/Daily Quests";
+			};
+			name = Release;
+		};
+		F6D29CE225CC281E00D0B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Daily QuestsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-QuestsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Daily Quests";
+			};
+			name = Debug;
+		};
+		F6D29CE325CC281E00D0B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Daily QuestsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Daily-QuestsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Daily Quests";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6D29CAC25CC281A00D0B11B /* Build configuration list for PBXProject "Daily Quests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D29CD925CC281E00D0B11B /* Debug */,
+				F6D29CDA25CC281E00D0B11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D29CDB25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily Quests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D29CDC25CC281E00D0B11B /* Debug */,
+				F6D29CDD25CC281E00D0B11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D29CDE25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D29CDF25CC281E00D0B11B /* Debug */,
+				F6D29CE025CC281E00D0B11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D29CE125CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D29CE225CC281E00D0B11B /* Debug */,
+				F6D29CE325CC281E00D0B11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */,
+			);
+			currentVersion = F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */;
+			path = Daily_Quests.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F6D29CA925CC281A00D0B11B /* Project object */;
+}
