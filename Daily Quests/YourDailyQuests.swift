@@ -13,10 +13,10 @@ struct YourDailyQuests: View {
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
     
+    @State private var addNewQuest = false
+    
     @State private var isExpanded = false
     @State private var isExpanded2 = false
-    
-    let names = ["Tobias", "Toobias", "Tobbias"]
     
     var body: some View {
         
@@ -28,47 +28,54 @@ struct YourDailyQuests: View {
                 DisclosureGroup("Todays Quests", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
-                                //ForEach in database
-                                ForEach(dailys) { daily in
-                                    
-                                    Text(daily.name ?? "Unknown").onTapGesture {
-                                        viewContext.delete(daily)
-                                        try? viewContext.save()
+                            //ForEach in database
+                            ForEach(dailys) { daily in
+                                Text(daily.name ?? "Unknown")
+                                    .onTapGesture {
+                                    viewContext.delete(daily)
+                                        
+                                    try? viewContext.save()
+                                      
                                     }
-                                    
-                                }
+                            }
                         }
                     }
                 }.accentColor(.white)
                 .font(.title2)
                 .foregroundColor(.white)
-                .padding(.all)
+                .padding()
                 .background(Color.blue)
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
+
+                Button(action: {
+                    self.addNewQuest.toggle()
+                }){
+                    Text("Add quest")
+                }.sheet(isPresented: $addNewQuest) {
+                    AddQuest()
+                }.padding()
+                .offset(x: 250, y: 0)
                 
                 Spacer().frame(height: 20)
                 
                 DisclosureGroup("Tomorrows Quests", isExpanded: $isExpanded2) {
                     ScrollView {
                         VStack {
-                            Text("Running").padding()
+                            Text("Running")
                             Text("Situps")
                         }
                     }
                 }.accentColor(.white)
                 .font(.title2)
                 .foregroundColor(.white)
-                .padding(.all)
+                .padding()
                 .background(Color.blue)
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
             }.padding()
-            
-            NavigationLink(destination: AddDailyQuest()) {
-                Text("Add new quest")
-            }
-            
+        
+          
 //            Button("Add") {
 //
 //                let rName = names.randomElement()!
@@ -82,8 +89,6 @@ struct YourDailyQuests: View {
         }
     }
 }
-
-
 
 
 struct YourDailyQuests_Previews: PreviewProvider {
