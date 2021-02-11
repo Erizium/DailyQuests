@@ -10,13 +10,17 @@ import CoreData
 
 struct ContentView: View {
   
+    @State private var loginScreen = false
 
     var body: some View {
      
-        
         NavigationView {
             VStack {
-
+                Spacer().frame(height: 150)
+               
+                
+                
+                Spacer().frame(height: 30)
                 NavigationLink(destination: YourDailyQuests()) {
                     ZStack {
 
@@ -52,9 +56,17 @@ struct ContentView: View {
                             .font(.title)
                     }
                 }
-            }.padding(.top, 150)
-            .offset(y: -240)
-       } 
+                
+                Button(action: {
+                    self.loginScreen.toggle()
+                }) {
+                    Text("Login")
+                }.fullScreenCover(isPresented: $loginScreen) {
+                    LoginScreen()
+                }
+                
+            }.offset(y: -240)
+       }
     }
 }
 

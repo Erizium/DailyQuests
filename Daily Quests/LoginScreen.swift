@@ -6,11 +6,25 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginScreen: View {
+    
+    var db = Firestore.firestore()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            saveToFirestore()
+        }) {
+            Text("Save")
+        }
     }
+    
+    func saveToFirestore(){
+        db.collection("test").addDocument(data: ["name" : "Tobias"])
+    }
+    
+    
 }
 
 struct LoginScreen_Previews: PreviewProvider {
