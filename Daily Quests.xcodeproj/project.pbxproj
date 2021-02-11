@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1971BFC54E411643824BEBEF /* Pods_Daily_Quests_Daily_QuestsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5372260F4118E9ABE8FEBFA3 /* Pods_Daily_Quests_Daily_QuestsUITests.framework */; };
+		6B42C0F77BFF0F1A5FEE2F07 /* Pods_Daily_QuestsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6133BC2D77230A3E3862FF6F /* Pods_Daily_QuestsTests.framework */; };
+		F62E8E3F25D5469800CD9E32 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E8E3E25D5469800CD9E32 /* LoginScreen.swift */; };
+		F62E8E4425D5510300CD9E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F62E8E4325D5510300CD9E32 /* GoogleService-Info.plist */; };
 		F64F0F0D25CC3F6A003E6A89 /* AddQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */; };
 		F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */; };
 		F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB625CC281A00D0B11B /* ContentView.swift */; };
@@ -18,6 +22,7 @@
 		F6D29CD725CC281E00D0B11B /* Daily_QuestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CD625CC281E00D0B11B /* Daily_QuestsUITests.swift */; };
 		F6D29CEC25CC292D00D0B11B /* YourDailyQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */; };
 		F6D29CF125CC293C00D0B11B /* YourWeeklyQuests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */; };
+		FF7535F0EFE12E3ABACB3264 /* Pods_Daily_Quests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD1AFCA7EB973A438CCCF5F /* Pods_Daily_Quests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5372260F4118E9ABE8FEBFA3 /* Pods_Daily_Quests_Daily_QuestsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Quests_Daily_QuestsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6133BC2D77230A3E3862FF6F /* Pods_Daily_QuestsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_QuestsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61B4171121F0B5070EE20DAC /* Pods-Daily Quests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Quests.release.xcconfig"; path = "Target Support Files/Pods-Daily Quests/Pods-Daily Quests.release.xcconfig"; sourceTree = "<group>"; };
+		68F9823F7B88969220AE4C2C /* Pods-Daily Quests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Quests.debug.xcconfig"; path = "Target Support Files/Pods-Daily Quests/Pods-Daily Quests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BBD8B355398777862092533 /* Pods-Daily Quests-Daily QuestsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Quests-Daily QuestsUITests.release.xcconfig"; path = "Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7247AA5076F430ACD9E8D467 /* Pods-Daily QuestsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily QuestsTests.release.xcconfig"; path = "Target Support Files/Pods-Daily QuestsTests/Pods-Daily QuestsTests.release.xcconfig"; sourceTree = "<group>"; };
+		990C0171C3FD63389DEF36DC /* Pods-Daily QuestsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily QuestsTests.debug.xcconfig"; path = "Target Support Files/Pods-Daily QuestsTests/Pods-Daily QuestsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD70E7C7D52908FB4401033E /* Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F62E8E3E25D5469800CD9E32 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		F62E8E4325D5510300CD9E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuest.swift; sourceTree = "<group>"; };
 		F6D29CB125CC281A00D0B11B /* Daily Quests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Quests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsApp.swift; sourceTree = "<group>"; };
@@ -57,6 +72,7 @@
 		F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDailyQuests.swift; sourceTree = "<group>"; };
 		F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWeeklyQuests.swift; sourceTree = "<group>"; };
 		F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 3.xcdatamodel"; sourceTree = "<group>"; };
+		FBD1AFCA7EB973A438CCCF5F /* Pods_Daily_Quests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Quests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7535F0EFE12E3ABACB3264 /* Pods_Daily_Quests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B42C0F77BFF0F1A5FEE2F07 /* Pods_Daily_QuestsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +96,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1971BFC54E411643824BEBEF /* Pods_Daily_Quests_Daily_QuestsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15F8D620A084EF8C0F8AC78C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1AFCA7EB973A438CCCF5F /* Pods_Daily_Quests.framework */,
+				5372260F4118E9ABE8FEBFA3 /* Pods_Daily_Quests_Daily_QuestsUITests.framework */,
+				6133BC2D77230A3E3862FF6F /* Pods_Daily_QuestsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBABA475CB3C2001CA1F1C17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68F9823F7B88969220AE4C2C /* Pods-Daily Quests.debug.xcconfig */,
+				61B4171121F0B5070EE20DAC /* Pods-Daily Quests.release.xcconfig */,
+				BD70E7C7D52908FB4401033E /* Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig */,
+				6BBD8B355398777862092533 /* Pods-Daily Quests-Daily QuestsUITests.release.xcconfig */,
+				990C0171C3FD63389DEF36DC /* Pods-Daily QuestsTests.debug.xcconfig */,
+				7247AA5076F430ACD9E8D467 /* Pods-Daily QuestsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F6D29CA825CC281A00D0B11B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +134,8 @@
 				F6D29CCA25CC281E00D0B11B /* Daily QuestsTests */,
 				F6D29CD525CC281E00D0B11B /* Daily QuestsUITests */,
 				F6D29CB225CC281A00D0B11B /* Products */,
+				BBABA475CB3C2001CA1F1C17 /* Pods */,
+				15F8D620A084EF8C0F8AC78C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +152,7 @@
 		F6D29CB325CC281A00D0B11B /* Daily Quests */ = {
 			isa = PBXGroup;
 			children = (
+				F62E8E4325D5510300CD9E32 /* GoogleService-Info.plist */,
 				F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */,
 				F6D29CB625CC281A00D0B11B /* ContentView.swift */,
 				F6D29CB825CC281D00D0B11B /* Assets.xcassets */,
@@ -117,6 +163,7 @@
 				F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */,
 				F6D29CBA25CC281D00D0B11B /* Preview Content */,
 				F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */,
+				F62E8E3E25D5469800CD9E32 /* LoginScreen.swift */,
 			);
 			path = "Daily Quests";
 			sourceTree = "<group>";
@@ -154,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6D29CDB25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily Quests" */;
 			buildPhases = (
+				4C3C24F99DA886C44522D75A /* [CP] Check Pods Manifest.lock */,
 				F6D29CAD25CC281A00D0B11B /* Sources */,
 				F6D29CAE25CC281A00D0B11B /* Frameworks */,
 				F6D29CAF25CC281A00D0B11B /* Resources */,
+				251CABB47C3FD493A9F5FC70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6D29CDE25CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsTests" */;
 			buildPhases = (
+				3047F90D2F5720358BC73517 /* [CP] Check Pods Manifest.lock */,
 				F6D29CC325CC281E00D0B11B /* Sources */,
 				F6D29CC425CC281E00D0B11B /* Frameworks */,
 				F6D29CC525CC281E00D0B11B /* Resources */,
@@ -189,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6D29CE125CC281E00D0B11B /* Build configuration list for PBXNativeTarget "Daily QuestsUITests" */;
 			buildPhases = (
+				A130BEF51A34DAF62B3840AF /* [CP] Check Pods Manifest.lock */,
 				F6D29CCE25CC281E00D0B11B /* Sources */,
 				F6D29CCF25CC281E00D0B11B /* Frameworks */,
 				F6D29CD025CC281E00D0B11B /* Resources */,
+				B9A8C1E34CC884D84979D69B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +304,7 @@
 			files = (
 				F6D29CBC25CC281D00D0B11B /* Preview Assets.xcassets in Resources */,
 				F6D29CB925CC281D00D0B11B /* Assets.xcassets in Resources */,
+				F62E8E4425D5510300CD9E32 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +324,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		251CABB47C3FD493A9F5FC70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Quests/Pods-Daily Quests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Quests/Pods-Daily Quests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily Quests/Pods-Daily Quests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3047F90D2F5720358BC73517 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily QuestsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C3C24F99DA886C44522D75A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily Quests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A130BEF51A34DAF62B3840AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily Quests-Daily QuestsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A8C1E34CC884D84979D69B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6D29CAD25CC281A00D0B11B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,6 +437,7 @@
 				F6D29CEC25CC292D00D0B11B /* YourDailyQuests.swift in Sources */,
 				F6D29CBE25CC281D00D0B11B /* Persistence.swift in Sources */,
 				F64F0F0D25CC3F6A003E6A89 /* AddQuest.swift in Sources */,
+				F62E8E3F25D5469800CD9E32 /* LoginScreen.swift in Sources */,
 				F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */,
 				F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */,
 			);
@@ -436,6 +593,7 @@
 		};
 		F6D29CDC25CC281E00D0B11B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68F9823F7B88969220AE4C2C /* Pods-Daily Quests.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -457,6 +615,7 @@
 		};
 		F6D29CDD25CC281E00D0B11B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61B4171121F0B5070EE20DAC /* Pods-Daily Quests.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +637,7 @@
 		};
 		F6D29CDF25CC281E00D0B11B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990C0171C3FD63389DEF36DC /* Pods-Daily QuestsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -499,6 +659,7 @@
 		};
 		F6D29CE025CC281E00D0B11B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7247AA5076F430ACD9E8D467 /* Pods-Daily QuestsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +681,7 @@
 		};
 		F6D29CE225CC281E00D0B11B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD70E7C7D52908FB4401033E /* Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +701,7 @@
 		};
 		F6D29CE325CC281E00D0B11B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BBD8B355398777862092533 /* Pods-Daily Quests-Daily QuestsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

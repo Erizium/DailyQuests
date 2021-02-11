@@ -28,7 +28,9 @@ struct YourDailyQuests: View {
                 DisclosureGroup("Todays Quests", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
-                            //ForEach in database
+                            //if logged in, foreach sync form firebase
+                            //else, ForEach in coredata
+                            
                             ForEach(dailys) { daily in
                                 Text(daily.name ?? "Unknown")
                                     .onTapGesture {
