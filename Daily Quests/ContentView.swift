@@ -32,8 +32,10 @@ struct ContentView: View {
                             .offset(x: -50, y: -30)
                             .font(.title)
                     }
-                }.offset(x: 0, y: -250)
+                }
 
+                Spacer().frame(height: 50)
+                
                 NavigationLink(destination: YourWeeklyQuests()) {
 
                     ZStack {
@@ -48,15 +50,13 @@ struct ContentView: View {
                             .foregroundColor(.red)
                             .offset(x: -40, y: -30)
                             .font(.title)
-
                     }
-                }.offset(x: 0, y: -200)
-                
+                }
             }.padding(.top, 150)
-        }
-        
-        }
+            .offset(y: -240)
+       } 
     }
+}
 
    
 struct ContentView_Previews: PreviewProvider {
@@ -64,3 +64,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
