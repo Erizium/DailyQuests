@@ -42,9 +42,15 @@ struct YourDailyQuests: View {
                                     HStack {
                                         
                                         Button(action: {
-                                            self.squareChecked.toggle()
+                                            daily.done.toggle()
+                                            
+                                            do {
+                                                try viewContext.save()
+                                            } catch {
+                                                print("Error")
+                                            }
                                         }) {
-                                            Image(systemName: self.squareChecked == true ? "square.dashed.inset.fill":                                                           "square.dashed")
+                                            Image(systemName: daily.done == true ?              "square.dashed.inset.fill" :                    "square.dashed")
                                         }
                                        
                                         

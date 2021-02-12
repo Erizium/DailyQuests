@@ -63,7 +63,7 @@ struct ContentView: View {
                     Text("Login")
                 }.fullScreenCover(isPresented: $loginScreen) {
                     LoginScreen()
-                }
+                }.offset(y: 50)
                 
             }.offset(y: -240)
        }
