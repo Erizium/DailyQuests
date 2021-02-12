@@ -17,10 +17,8 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Spacer().frame(height: 150)
+            
                
-                
-                
-                Spacer().frame(height: 30)
                 NavigationLink(destination: YourDailyQuests()) {
                     ZStack {
 
@@ -57,13 +55,10 @@ struct ContentView: View {
                     }
                 }
                 
-                Button(action: {
-                    self.loginScreen.toggle()
-                }) {
+                NavigationLink(destination: LoginScreen()) {
                     Text("Login")
-                }.fullScreenCover(isPresented: $loginScreen) {
-                    LoginScreen()
                 }.offset(y: 50)
+                
                 
             }.offset(y: -240)
        }
