@@ -17,29 +17,47 @@ struct YourDailyQuests: View {
     
     @State private var isExpanded = false
     @State private var isExpanded2 = false
+    @State var squareChecked = false
+    
     
     var body: some View {
+        
+        
         
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
                 Text("Daily Quests").font(.largeTitle)
                 Spacer().frame(height: 50)
+                
                 DisclosureGroup("Todays Quests", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
                             //if logged in, foreach sync form firebase
                             //else, ForEach in coredata
-                            
-                            ForEach(dailys) { daily in
-                                Text(daily.name ?? "Unknown")
-                                    .onTapGesture {
-                                    viewContext.delete(daily)
+                                
+                                Spacer()
+                                
+                                ForEach(dailys) { daily in
+                                    HStack {
                                         
-                                    try? viewContext.save()
-                                      
+                                        Button(action: {
+                                            self.squareChecked.toggle()
+                                        }) {
+                                            Image(systemName: self.squareChecked == true ? "square.dashed.inset.fill":                                                           "square.dashed")
+                                        }
+                                       
+                                        
+                                        Spacer()
+                                        Text(daily.name ?? "Unknown")
+                                        Spacer()
                                     }
-                            }
+//                                         .onTapGesture {
+//                                            viewContext.delete(daily)
+//                                            try? viewContext.save()
+//                                        }
+                                
+                                }
                         }
                     }
                 }.accentColor(.white)
