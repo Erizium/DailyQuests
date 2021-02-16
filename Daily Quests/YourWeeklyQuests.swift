@@ -14,10 +14,10 @@ struct YourWeeklyQuests: View {
     @FetchRequest(entity: Weekly.entity(), sortDescriptors: [])
         var weeklys: FetchedResults<Weekly>
     
-    @State private var addNewQuest = false
-    
     @State private var isExpanded = false
     @State private var isExpanded2 = false
+    @State private var addNewQuest = false
+    @State private var completedWeeklyQuests = UserDefaults.standard.integer(forKey: "CompletedWeekly")
     
     var body: some View {
         
@@ -26,16 +26,42 @@ struct YourWeeklyQuests: View {
                 
                 Text("Weekly Quests").font(.largeTitle)
                 Spacer().frame(height: 50)
-                DisclosureGroup("This weeks quests", isExpanded: $isExpanded) {
+                DisclosureGroup("This weeks quests      \(completedWeeklyQuests)/\(weeklys.count)", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
                             ForEach(weeklys) { weekly in
-                                Text(weekly.name ?? "Unkown")
-                                    .onTapGesture {
-                                        viewContext.delete(weekly)
+                                
+                                HStack {
+                                    Button(action: {
+                                        weekly.done.toggle()
                                         
-                                        try? viewContext.save()
+                                        if weekly.done == true {
+                                            completedWeeklyQuests += 1
+                                            print(completedWeeklyQuests)
+                                        } else {
+                                            completedWeeklyQuests -= 1
+                                            print(completedWeeklyQuests)
+                                        }
+                                        UserDefaults.standard.set(completedWeeklyQuests, forKey: "CompletedWeekly")
+                                        
+                                        do {
+                                            try viewContext.save()
+                                        } catch {
+                                            print("Error weekly")
+                                        }
+                                    }) {
+                                        Image(systemName: weekly.done == true ? "square.dashed.inset.fill" : "square.dashed")
                                     }
+                                    Spacer()
+                                    Text(weekly.name ?? "Unkown")
+                                        .onTapGesture {
+                                            viewContext.delete(weekly)
+                                            
+                                            try? viewContext.save()
+                                        }
+                                    Spacer()
+                                }
+                                
                             }
                             
                         }

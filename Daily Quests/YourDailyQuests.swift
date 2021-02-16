@@ -16,10 +16,9 @@ struct YourDailyQuests: View {
     @State private var isExpanded = false
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
-    @State private var completedQuests = UserDefaults.standard.integer(forKey: "Completed")
+    @State private var completedDailyQuests = UserDefaults.standard.integer(forKey: "CompletedDaily")
     
     var body: some View {
-        
         
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -27,8 +26,9 @@ struct YourDailyQuests: View {
                 Text("Daily Quests").font(.largeTitle)
                 Spacer().frame(height: 50)
                 
-                DisclosureGroup("Todays Quests       \(completedQuests)/\(dailys.count)", isExpanded: $isExpanded) {
+                DisclosureGroup("Todays Quests       \(completedDailyQuests)/\(dailys.count)", isExpanded: $isExpanded) {
                     ScrollView {
+                        
                         VStack {
                             Spacer()
                             ForEach(dailys) { daily in
@@ -37,17 +37,20 @@ struct YourDailyQuests: View {
                                         daily.done.toggle()
                                         
                                         if daily.done == true {
-                                            completedQuests += 1
+                                            completedDailyQuests += 1
+                                            
                                         } else {
-                                           completedQuests -= 1
+                                           completedDailyQuests -= 1
+                                            
                                         }
                                         
-                                        UserDefaults.standard.set(completedQuests, forKey: "Completed")
+                                        
+                                        UserDefaults.standard.set(completedDailyQuests, forKey: "CompletedDaily")
                                        
                                         do {
                                             try viewContext.save()
                                         } catch {
-                                            print("Error")
+                                            print("Error daily")
                                         }
                                     }) {
                                         Image(systemName: daily.done == true ?
