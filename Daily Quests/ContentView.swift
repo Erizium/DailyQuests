@@ -17,8 +17,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Spacer().frame(height: 150)
-            
-               
+    
                 NavigationLink(destination: YourDailyQuests()) {
                     ZStack {
 

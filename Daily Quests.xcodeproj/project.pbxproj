@@ -56,6 +56,7 @@
 		F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuest.swift; sourceTree = "<group>"; };
 		F688D58625D6C65300F4E052 /* Daily_Quests 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 4.xcdatamodel"; sourceTree = "<group>"; };
 		F688D58A25D6C6E600F4E052 /* Daily_Quests 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 5.xcdatamodel"; sourceTree = "<group>"; };
+		F688D5D825DBF7F800F4E052 /* Daily_Quests 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 6.xcdatamodel"; sourceTree = "<group>"; };
 		F6D29CB125CC281A00D0B11B /* Daily Quests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Quests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_QuestsApp.swift; sourceTree = "<group>"; };
 		F6D29CB625CC281A00D0B11B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourDailyQuests.swift; sourceTree = "<group>"; };
 		F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWeeklyQuests.swift; sourceTree = "<group>"; };
 		F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 3.xcdatamodel"; sourceTree = "<group>"; };
+		F6D411E525DC0589006D30D1 /* Daily_Quests 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 7.xcdatamodel"; sourceTree = "<group>"; };
 		FBD1AFCA7EB973A438CCCF5F /* Pods_Daily_Quests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Quests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -765,13 +767,15 @@
 		F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F6D411E525DC0589006D30D1 /* Daily_Quests 7.xcdatamodel */,
+				F688D5D825DBF7F800F4E052 /* Daily_Quests 6.xcdatamodel */,
 				F688D58A25D6C6E600F4E052 /* Daily_Quests 5.xcdatamodel */,
 				F688D58625D6C65300F4E052 /* Daily_Quests 4.xcdatamodel */,
 				F6D29CF925CC301800D0B11B /* Daily_Quests 3.xcdatamodel */,
 				F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */,
 				F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */,
 			);
-			currentVersion = F688D58A25D6C6E600F4E052 /* Daily_Quests 5.xcdatamodel */;
+			currentVersion = F6D411E525DC0589006D30D1 /* Daily_Quests 7.xcdatamodel */;
 			path = Daily_Quests.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

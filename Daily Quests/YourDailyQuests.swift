@@ -13,15 +13,12 @@ struct YourDailyQuests: View {
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
     
-    @State private var addNewQuest = false
-    
     @State private var isExpanded = false
     @State private var isExpanded2 = false
-    @State var squareChecked = false
-    
+    @State private var addNewQuest = false
+    @State private var completedQuests = UserDefaults.standard.integer(forKey: "Completed")
     
     var body: some View {
-        
         
         
         ScrollView {
@@ -30,40 +27,40 @@ struct YourDailyQuests: View {
                 Text("Daily Quests").font(.largeTitle)
                 Spacer().frame(height: 50)
                 
-                DisclosureGroup("Todays Quests", isExpanded: $isExpanded) {
+                DisclosureGroup("Todays Quests       \(completedQuests)/\(dailys.count)", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
-                            //if logged in, foreach sync form firebase
-                            //else, ForEach in coredata
-                                
-                                Spacer()
-                                
-                                ForEach(dailys) { daily in
-                                    HStack {
+                            Spacer()
+                            ForEach(dailys) { daily in
+                                HStack {
+                                    Button(action: {
+                                        daily.done.toggle()
                                         
-                                        Button(action: {
-                                            daily.done.toggle()
-                                            
-                                            do {
-                                                try viewContext.save()
-                                            } catch {
-                                                print("Error")
-                                            }
-                                        }) {
-                                            Image(systemName: daily.done == true ?              "square.dashed.inset.fill" :                    "square.dashed")
+                                        if daily.done == true {
+                                            completedQuests += 1
+                                        } else {
+                                           completedQuests -= 1
                                         }
-                                       
                                         
-                                        Spacer()
-                                        Text(daily.name ?? "Unknown")
-                                        Spacer()
+                                        UserDefaults.standard.set(completedQuests, forKey: "Completed")
+                                       
+                                        do {
+                                            try viewContext.save()
+                                        } catch {
+                                            print("Error")
+                                        }
+                                    }) {
+                                        Image(systemName: daily.done == true ?
+                                                "square.dashed.inset.fill" : "square.dashed")
                                     }
-//                                         .onTapGesture {
-//                                            viewContext.delete(daily)
-//                                            try? viewContext.save()
-//                                        }
-                                
+                                    Spacer()
+                                    Text(daily.name ?? "Unknown").onTapGesture {
+                                        viewContext.delete(daily)
+                                        try? viewContext.save()
+                                    }
+                                    Spacer()
                                 }
+                            }
                         }
                     }
                 }.accentColor(.white)
@@ -100,8 +97,24 @@ struct YourDailyQuests: View {
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
             }.padding()
-        
-          
+        }
+    }
+
+}
+
+
+struct YourDailyQuests_Previews: PreviewProvider {
+    static var previews: some View {
+        YourDailyQuests()
+    }
+}
+
+//                                         .onTapGesture {
+//                                            viewContext.delete(daily)
+//                                            try? viewContext.save()
+//                                        }
+
+
 //            Button("Add") {
 //
 //                let rName = names.randomElement()!
@@ -112,13 +125,3 @@ struct YourDailyQuests: View {
 //
 //                try? self.viewContext.save()
 //            }
-        }
-    }
-}
-
-
-struct YourDailyQuests_Previews: PreviewProvider {
-    static var previews: some View {
-        YourDailyQuests()
-    }
-}
