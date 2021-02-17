@@ -53,12 +53,6 @@ struct ContentView: View {
                             .font(.title)
                     }
                 }
-                
-                NavigationLink(destination: LoginScreen()) {
-                    Text("Login")
-                }.offset(y: 50)
-                
-                
             }.offset(y: -240)
        }
     }

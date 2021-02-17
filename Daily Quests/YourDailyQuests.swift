@@ -44,7 +44,6 @@ struct YourDailyQuests: View {
                                             
                                         }
                                         
-                                        
                                         UserDefaults.standard.set(completedDailyQuests, forKey: "CompletedDaily")
                                        
                                         do {

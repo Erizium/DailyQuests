@@ -11,6 +11,7 @@ import CoreData
 struct AddQuest: View {
     
     @State var newQuest: String = ""
+    @State private var questTypePicker = false
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
@@ -24,9 +25,17 @@ struct AddQuest: View {
             Spacer().frame(height: 100)
             Text("Add a new Quest")
                 .font(.largeTitle)
+            Spacer().frame(height: 30)
+            DisclosureGroup("Select Quest Type", isExpanded: $questTypePicker) {
+                VStack {
+                    Spacer().frame(height: 10)
+                    Text("Daily Quest")
+                    Spacer().frame(height: 10)
+                    Text("Weekly Quest")
+                }
+            }
             
-            
-            Spacer().frame(height: 100)
+            Spacer().frame(height: 20)
             
             Form {
                 Section {
