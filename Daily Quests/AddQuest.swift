@@ -90,22 +90,6 @@ struct AddQuest: View {
                 Spacer()
             }
             
-//            Button(action: {
-//                newDailyQuest()
-//                print("Add Daily pressed")
-//                newQuest = ""
-//            }) {
-//                Text("Add Daily")
-//            }.offset(x: 270, y: -150)
-//
-//            Button(action: {
-//                newWeeklyQuest()
-//                print("Add Weekly pressed")
-//                newQuest = ""
-//            }){
-//                Text("Add Weekly")
-//            }.offset(x: 20, y: -170)
-//
             Spacer()
             
         }.padding()
