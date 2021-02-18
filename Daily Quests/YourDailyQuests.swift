@@ -17,6 +17,10 @@ struct YourDailyQuests: View {
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
     @State private var completedDailyQuests = UserDefaults.standard.integer(forKey: "CompletedDaily")
+    @State private var timeRemaining = 24*60*60
+    @State private var doneText = "Uncompleted"
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
@@ -24,7 +28,27 @@ struct YourDailyQuests: View {
             VStack(alignment: .leading, spacing: 20) {
                 
                 Text("Daily Quests").font(.largeTitle)
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 10)
+                HStack {
+                    Spacer()
+                    Text("Time left:").font(.title3)
+                    Text("\(timeString(time: timeRemaining))")
+                        .padding()
+                        .font(.title2)
+                        .onReceive(timer){ _ in
+                            if timeRemaining > 0 {
+                                timeRemaining -= 1
+                            }
+                            
+                        }
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    Text("\(doneText)")
+                    Spacer()
+                }
+                Spacer().frame(height: 20)
                 
                 DisclosureGroup("Todays Quests       \(completedDailyQuests)/\(dailys.count)", isExpanded: $isExpanded) {
                     ScrollView {
@@ -51,6 +75,11 @@ struct YourDailyQuests: View {
                                         } catch {
                                             print("Error daily")
                                         }
+                                        
+                                        if completedDailyQuests == dailys.count {
+                                            doneText = "Completed"
+                                            self.timer.upstream.connect().cancel()
+                                        }
                                     }) {
                                         Image(systemName: daily.done == true ?
                                                 "square.dashed.inset.fill" : "square.dashed")
@@ -64,6 +93,7 @@ struct YourDailyQuests: View {
                                 }
                             }
                         }
+                        
                     }
                 }.accentColor(.white)
                 .font(.title2)
@@ -100,6 +130,14 @@ struct YourDailyQuests: View {
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
             }.padding()
         }
+    }
+    
+    func timeString(time: Int) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        return String(format: "%2i:%2i:%2i", hours, minutes, seconds)
     }
 
 }

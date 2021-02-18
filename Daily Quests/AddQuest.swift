@@ -43,7 +43,6 @@ struct AddQuest: View {
                             if self.squareCheckedDaily == "square.dashed.inset.fill" {
                                 self.squareCheckedWeekly = "square.dashed"
                             }
-            
                         }
                         Spacer()
                     }
