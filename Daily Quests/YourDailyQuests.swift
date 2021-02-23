@@ -164,11 +164,6 @@ struct YourDailyQuests: View {
         
         timeRemaining = Int(untilNextDay)
     }
-    
-    func startTimer() {
-        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    }
-
 }
 
 
