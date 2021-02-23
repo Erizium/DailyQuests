@@ -8,6 +8,8 @@
 import SwiftUI
 import CoreData
 
+//sortera DisclosureGroup efter inläggningsdatum, lägga till datum i CoreData och gå efter det i "sortDescriptors: []".
+
 struct YourDailyQuests: View {
     
     @Environment(\.managedObjectContext) var viewContext
@@ -17,10 +19,13 @@ struct YourDailyQuests: View {
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
     @State private var completedDailyQuests = UserDefaults.standard.integer(forKey: "CompletedDaily")
+    
     @State private var timeRemaining = 24*60*60
     @State private var doneText = "Uncompleted"
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+   
+    
     
     var body: some View {
         
@@ -31,14 +36,16 @@ struct YourDailyQuests: View {
                 Spacer().frame(height: 10)
                 HStack {
                     Spacer()
-                    Text("Time left:").font(.title3)
+                    Text("Until reset:").font(.title3)
                     Text("\(timeString(time: timeRemaining))")
                         .padding()
                         .font(.title2)
+                        .onAppear() {
+                            timeUntilNextDay()
+                        }
                         .onReceive(timer){ _ in
-                            if timeRemaining > 0 {
-                                timeRemaining -= 1
-                            }
+                            
+                            timeUntilNextDay()
                             
                         }
                     Spacer()
@@ -56,7 +63,9 @@ struct YourDailyQuests: View {
                         VStack {
                             Spacer()
                             ForEach(dailys) { daily in
+                                
                                 HStack {
+                                    
                                     Button(action: {
                                         daily.done.toggle()
                                         
@@ -77,9 +86,12 @@ struct YourDailyQuests: View {
                                         }
                                         
                                         if completedDailyQuests == dailys.count {
-                                            doneText = "Completed"
-                                            self.timer.upstream.connect().cancel()
+                                            doneText = "Completed with \(timeString(time: timeRemaining)) left"
+                                            //self.timer.upstream.connect().cancel()
+                                        } else {
+                                            doneText = "Uncompleted"
                                         }
+                                        
                                     }) {
                                         Image(systemName: daily.done == true ?
                                                 "square.dashed.inset.fill" : "square.dashed")
@@ -91,6 +103,8 @@ struct YourDailyQuests: View {
                                     }
                                     Spacer()
                                 }
+                                
+                                
                             }
                         }
                         
@@ -128,6 +142,8 @@ struct YourDailyQuests: View {
                 .background(Color.blue)
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
+                
+                
             }.padding()
         }
     }
@@ -138,6 +154,19 @@ struct YourDailyQuests: View {
         let seconds = Int(time) % 60
         
         return String(format: "%2i:%2i:%2i", hours, minutes, seconds)
+    }
+    
+    func timeUntilNextDay() {
+        
+        let startOfNextDay = Calendar.current.nextDate(after: Date(), matching: DateComponents(hour: 0, minute: 0), matchingPolicy: .nextTimePreservingSmallerComponents)!
+        
+        let untilNextDay = startOfNextDay.timeIntervalSince(Date())
+        
+        timeRemaining = Int(untilNextDay)
+    }
+    
+    func startTimer() {
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     }
 
 }
