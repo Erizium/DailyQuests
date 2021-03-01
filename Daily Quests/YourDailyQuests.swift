@@ -14,11 +14,14 @@ struct YourDailyQuests: View {
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
+    @FetchRequest(entity: TomorrowDaily.entity(), sortDescriptors: []) var tomorrowDaily: FetchedResults<TomorrowDaily>
     
     @State private var isExpanded = false
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
+    @State private var addNextQuest = false
     @State private var completedDailyQuests = UserDefaults.standard.integer(forKey: "CompletedDaily")
+    //@State private var timeLeft = UserDefaults.standard.string(forKey: "timeLeft")
     
     @State private var timeRemaining = 24*60*60
     @State private var doneText = "Uncompleted"
@@ -26,8 +29,8 @@ struct YourDailyQuests: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
    
     
-    
     var body: some View {
+        
         
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -59,11 +62,9 @@ struct YourDailyQuests: View {
                 
                 DisclosureGroup("Todays Quests       \(completedDailyQuests)/\(dailys.count)", isExpanded: $isExpanded) {
                     ScrollView {
-                        
                         VStack {
                             Spacer()
                             ForEach(dailys) { daily in
-                                
                                 HStack {
                                     
                                     Button(action: {
@@ -87,6 +88,9 @@ struct YourDailyQuests: View {
                                         
                                         if completedDailyQuests == dailys.count {
                                             doneText = "Completed with \(timeString(time: timeRemaining)) left"
+                                            
+                                            let timeLeft = String(timeRemaining)
+                                            UserDefaults.standard.set(timeLeft, forKey: "timeLeft")
                                             //self.timer.upstream.connect().cancel()
                                         } else {
                                             doneText = "Uncompleted"
@@ -98,6 +102,7 @@ struct YourDailyQuests: View {
                                     }
                                     Spacer()
                                     Text(daily.name ?? "Unknown").onTapGesture {
+                                        completedDailyQuests -= 1
                                         viewContext.delete(daily)
                                         try? viewContext.save()
                                     }
@@ -118,7 +123,7 @@ struct YourDailyQuests: View {
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
 
                 Button(action: {
-                    self.addNewQuest.toggle()
+                    self.addNewQuest = true
                 }){
                     Text("Add quest")
                 }.sheet(isPresented: $addNewQuest) {
@@ -131,8 +136,23 @@ struct YourDailyQuests: View {
                 DisclosureGroup("Tomorrows Quests", isExpanded: $isExpanded2) {
                     ScrollView {
                         VStack {
-                            Text("Running")
-                            Text("Situps")
+                            Spacer()
+                            ForEach(tomorrowDaily) { tomorrowDaily in
+                                HStack {
+                                    Button(action: {
+                                        tomorrowDaily.done.toggle()
+                                    }){
+                                        Image(systemName:  tomorrowDaily.done == true ? "square.dashed.inset.fill" : "square.dashed")
+                                    }
+                                    Spacer()
+                                    Text(tomorrowDaily.name ?? "Unknown").onTapGesture {
+                                        viewContext.delete(tomorrowDaily)
+                                        try? viewContext.save()
+                                    }
+                                    Spacer()
+                                }
+                                
+                            }
                         }
                     }
                 }.accentColor(.white)
@@ -143,8 +163,19 @@ struct YourDailyQuests: View {
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
                 
+                Button(action: {
+                    self.addNextQuest = true
+                }){
+                    
+                    Text("Add Quest")
+                }.sheet(isPresented: $addNextQuest) {
+                    AddNextQuest()
+                }.padding()
+                .offset(x: 250)
                 
             }.padding()
+            
+            
         }
     }
     
@@ -164,6 +195,13 @@ struct YourDailyQuests: View {
         
         timeRemaining = Int(untilNextDay)
     }
+    
+//    func doneTextTrue() {
+//
+//        if completedDailyQuests == dailys.count {
+//            doneText = "Completed with \("timeLeft") left"
+//        }
+//    }
 }
 
 

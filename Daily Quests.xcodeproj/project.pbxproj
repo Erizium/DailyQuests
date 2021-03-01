@@ -10,6 +10,7 @@
 		1971BFC54E411643824BEBEF /* Pods_Daily_Quests_Daily_QuestsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5372260F4118E9ABE8FEBFA3 /* Pods_Daily_Quests_Daily_QuestsUITests.framework */; };
 		6B42C0F77BFF0F1A5FEE2F07 /* Pods_Daily_QuestsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6133BC2D77230A3E3862FF6F /* Pods_Daily_QuestsTests.framework */; };
 		F62E8E4425D5510300CD9E32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F62E8E4325D5510300CD9E32 /* GoogleService-Info.plist */; };
+		F64EC21B25ECFCAE00A6AAE7 /* AddNextQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64EC21A25ECFCAE00A6AAE7 /* AddNextQuest.swift */; };
 		F64F0F0D25CC3F6A003E6A89 /* AddQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */; };
 		F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB425CC281A00D0B11B /* Daily_QuestsApp.swift */; };
 		F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D29CB625CC281A00D0B11B /* ContentView.swift */; };
@@ -51,6 +52,8 @@
 		990C0171C3FD63389DEF36DC /* Pods-Daily QuestsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily QuestsTests.debug.xcconfig"; path = "Target Support Files/Pods-Daily QuestsTests/Pods-Daily QuestsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD70E7C7D52908FB4401033E /* Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Daily Quests-Daily QuestsUITests/Pods-Daily Quests-Daily QuestsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F62E8E4325D5510300CD9E32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F64EC20E25ECEFD000A6AAE7 /* Daily_Quests 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 8.xcdatamodel"; sourceTree = "<group>"; };
+		F64EC21A25ECFCAE00A6AAE7 /* AddNextQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNextQuest.swift; sourceTree = "<group>"; };
 		F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuest.swift; sourceTree = "<group>"; };
 		F688D58625D6C65300F4E052 /* Daily_Quests 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 4.xcdatamodel"; sourceTree = "<group>"; };
 		F688D58A25D6C6E600F4E052 /* Daily_Quests 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Daily_Quests 5.xcdatamodel"; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 				F6D29CF025CC293C00D0B11B /* YourWeeklyQuests.swift */,
 				F6D29CEB25CC292D00D0B11B /* YourDailyQuests.swift */,
 				F64F0F0C25CC3F6A003E6A89 /* AddQuest.swift */,
+				F64EC21A25ECFCAE00A6AAE7 /* AddNextQuest.swift */,
 				F6D29CC225CC281D00D0B11B /* Info.plist */,
 				F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */,
 				F6D29CBA25CC281D00D0B11B /* Preview Content */,
@@ -439,6 +443,7 @@
 				F64F0F0D25CC3F6A003E6A89 /* AddQuest.swift in Sources */,
 				F6D29CB725CC281A00D0B11B /* ContentView.swift in Sources */,
 				F6D29CB525CC281A00D0B11B /* Daily_QuestsApp.swift in Sources */,
+				F64EC21B25ECFCAE00A6AAE7 /* AddNextQuest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +768,7 @@
 		F6D29CBF25CC281D00D0B11B /* Daily_Quests.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F64EC20E25ECEFD000A6AAE7 /* Daily_Quests 8.xcdatamodel */,
 				F6D411E525DC0589006D30D1 /* Daily_Quests 7.xcdatamodel */,
 				F688D5D825DBF7F800F4E052 /* Daily_Quests 6.xcdatamodel */,
 				F688D58A25D6C6E600F4E052 /* Daily_Quests 5.xcdatamodel */,
@@ -771,7 +777,7 @@
 				F6D29CE725CC285D00D0B11B /* Daily_Quests 2.xcdatamodel */,
 				F6D29CC025CC281D00D0B11B /* Daily_Quests.xcdatamodel */,
 			);
-			currentVersion = F6D411E525DC0589006D30D1 /* Daily_Quests 7.xcdatamodel */;
+			currentVersion = F64EC20E25ECEFD000A6AAE7 /* Daily_Quests 8.xcdatamodel */;
 			path = Daily_Quests.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

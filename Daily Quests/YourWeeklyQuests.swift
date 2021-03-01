@@ -13,10 +13,13 @@ struct YourWeeklyQuests: View {
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Weekly.entity(), sortDescriptors: [])
         var weeklys: FetchedResults<Weekly>
+    @FetchRequest(entity: NextWeek.entity(), sortDescriptors: [])
+        var nextWeek: FetchedResults<NextWeek>
     
     @State private var isExpanded = false
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
+    @State private var addNextQuest = false
     @State private var completedWeeklyQuests = UserDefaults.standard.integer(forKey: "CompletedWeekly")
     
     var body: some View {
@@ -75,22 +78,39 @@ struct YourWeeklyQuests: View {
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
                 
                 Button(action: {
-                    self.addNewQuest.toggle()
+                    self.addNewQuest = true
                 }){
                     Text("Add quest")
                 }.sheet(isPresented: $addNewQuest) {
                     AddQuest()
                 }.padding()
-                .offset(x: 250, y: 0)
+                .offset(x: 250)
         
                 Spacer().frame(height: 20)
                 
                 DisclosureGroup("Next Weeks Quests", isExpanded: $isExpanded2) {
                     ScrollView {
                         VStack {
-                            Text("Nothing")
-                            Text("Here")
-                            Text("Yet")
+                            ForEach(nextWeek) { nextWeek in
+                                
+                                HStack {
+                                    Button(action: {
+                                        nextWeek.done.toggle()
+                                     
+                                    }) {
+                                        Image(systemName: nextWeek.done == true ? "square.dashed.inset.fill" : "square.dashed")
+                                    }
+                                    Spacer()
+                                    Text(nextWeek.name ?? "Unkown")
+                                        .onTapGesture {
+                                            viewContext.delete(nextWeek)
+                                            
+                                            try? viewContext.save()
+                                        }
+                                    Spacer()
+                                }
+                                
+                            }
                         }
                     }
                 }.accentColor(.white)
@@ -100,6 +120,16 @@ struct YourWeeklyQuests: View {
                 .background(Color.blue)
                 .cornerRadius(7)
                 .shadow(color: .black, radius: 7, x: 0, y: 10)
+                
+                Button(action: {
+                    self.addNextQuest = true
+                }){
+                 Text("Add quest")
+                }.sheet(isPresented: $addNextQuest) {
+                    AddNextQuest()
+                }.padding()
+                .offset(x: 250)
+                
             }.padding()
         }
     }
