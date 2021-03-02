@@ -18,7 +18,9 @@ struct AddQuest: View {
     @State private var squareCheckedWeekly = "square.dashed"
     
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Daily.entity(), sortDescriptors: []) var dailys: FetchedResults<Daily>
+    @FetchRequest(entity: Daily.entity(), sortDescriptors: [
+                    NSSortDescriptor(keyPath: \Daily.date, ascending:false)])
+        var dailys: FetchedResults<Daily>
     @FetchRequest(entity: Weekly.entity(), sortDescriptors: [])
         var weeklys: FetchedResults<Weekly>
     
@@ -99,6 +101,7 @@ struct AddQuest: View {
         
         let daily = Daily(context: self.viewContext)
         daily.name = "\(newQuest)"
+        daily.date = Date()
         
         
         try? self.viewContext.save()

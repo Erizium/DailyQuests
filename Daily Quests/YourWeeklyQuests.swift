@@ -5,15 +5,17 @@
 //  Created by Tobias Österlin on 2021-02-04.
 //
 
+// göra så tomorrow quests ersätter dagens beroende på vilket datum de har.
+
 import SwiftUI
 import CoreData
 
 struct YourWeeklyQuests: View {
     
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Weekly.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Weekly.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Weekly.date, ascending: false)])
         var weeklys: FetchedResults<Weekly>
-    @FetchRequest(entity: NextWeek.entity(), sortDescriptors: [])
+    @FetchRequest(entity: NextWeek.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \NextWeek.date, ascending: false)])
         var nextWeek: FetchedResults<NextWeek>
     
     @State private var isExpanded = false
@@ -22,12 +24,25 @@ struct YourWeeklyQuests: View {
     @State private var addNextQuest = false
     @State private var completedWeeklyQuests = UserDefaults.standard.integer(forKey: "CompletedWeekly")
     
+    @State private var timeRemaining = 24*60*60*7
+    @State private var doneText = "Uncompleted"
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    
     var body: some View {
         
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Spacer()
+                    Text("Weekly Quests").font(.largeTitle)
+                    Image("QuestLetter")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    Spacer()
+                }
                 
-                Text("Weekly Quests").font(.largeTitle)
                 Spacer().frame(height: 50)
                 DisclosureGroup("This weeks quests      \(completedWeeklyQuests)/\(weeklys.count)", isExpanded: $isExpanded) {
                     ScrollView {
@@ -109,7 +124,6 @@ struct YourWeeklyQuests: View {
                                         }
                                     Spacer()
                                 }
-                                
                             }
                         }
                     }
