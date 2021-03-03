@@ -51,7 +51,7 @@ struct YourDailyQuests: View {
                                 showAlert = true
                             }.alert(isPresented: $showAlert){
                                 Alert(title: Text("Quest Guide"), message:
-                                        Text("\n- Swipe left or right to delete a quest.\n- Click the square to clear a quest."),
+                                        Text("\n- Swipe left or right to delete a quest.\n- Click the square to clear a quest.\n- There are 2 'Add quest'. Top is for this day/week, bottom is next day/week."),
                                         dismissButton: .default(Text("Thanks!")))
                             }
                             Spacer()
@@ -112,7 +112,6 @@ struct YourDailyQuests: View {
                                                 
                                                 let timeLeft = String(timeRemaining)
                                                 UserDefaults.standard.set(timeLeft, forKey: "timeLeft")
-                                                //self.timer.upstream.connect().cancel()
                                             } else {
                                                 doneText = "Uncompleted"
                                             }

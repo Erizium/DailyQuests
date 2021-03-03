@@ -16,8 +16,7 @@ struct AddQuest: View {
     @State private var selctedWeekly = false
     @State private var squareCheckedDaily = "square.dashed"
     @State private var squareCheckedWeekly = "square.dashed"
-    @State private var showingAlert = false
-    
+    @State private var showAlert = false
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: [
@@ -31,8 +30,25 @@ struct AddQuest: View {
         VStack(alignment: .leading) {
             
             Spacer().frame(height: 100)
+            HStack {
+                Spacer()
             Text("Add a new Quest")
                 .font(.largeTitle)
+                
+            Image(systemName: "questionmark.circle")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .offset(x: 20)
+                .foregroundColor(.blue)
+                .onTapGesture {
+                    print("hej")
+                    showAlert = true
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text("Add new quest"), message: Text("\n1. Choose a quest type\n2. Type your quest in the text field.\n3. Click on 'Add quest'\n4. Quest has been added!\n5. Swipe down to go back."), dismissButton: .default(Text("Awesome")))
+                }
+                Spacer()
+                
+            }
             Spacer().frame(height: 30)
             DisclosureGroup("Select Quest Type", isExpanded: $questTypePicker) {
                 VStack {
@@ -88,11 +104,11 @@ struct AddQuest: View {
                         } else {
                             newWeeklyQuest()
                         }
-                        showingAlert = true
+                        showAlert = true
                     }
                 }) {
                     Text("Add quest").font(.title3)
-                }.alert(isPresented: $showingAlert) {
+                }.alert(isPresented: $showAlert) {
                     Alert(title: Text("New quest!"), message: Text("A new quest is available."), dismissButton: .default(Text("Nice")))
                 }
                 Spacer()

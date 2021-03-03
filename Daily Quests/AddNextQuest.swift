@@ -16,7 +16,7 @@ struct AddNextQuest: View {
     @State private var squareCheckedDaily = "square.dashed"
     @State private var squareCheckedWeekly = "square.dashed"
     @State private var newQuest = ""
-    @State private var showingAlert = false
+    @State private var showAlert = false
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: TomorrowDaily.entity(), sortDescriptors: []) var tomorrowsDailys: FetchedResults<TomorrowDaily>
@@ -26,7 +26,22 @@ struct AddNextQuest: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer().frame(height: 100)
-            Text("Add a new Quest").font(.largeTitle)
+            HStack {
+                Spacer()
+                Text("Add a new Quest").font(.largeTitle)
+                Image(systemName: "questionmark.circle")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                    showAlert = true
+                }.alert(isPresented: $showAlert){
+                    Alert(title: Text("Quest Guide"), message:
+                            Text("\n1. Choose a quest type\n2. Type your quest in the text field.\n3. Click on 'Add quest'\n4. Quest has been added!\n5. Swipe down to go back."),
+                            dismissButton: .default(Text("Thanks!")))
+                }
+                Spacer()
+            }
             Spacer().frame(height: 30)
             DisclosureGroup("Select Quest Type", isExpanded: $typePicker) {
                 VStack {
@@ -78,11 +93,11 @@ struct AddNextQuest: View {
                         } else {
                             newNextWeekQuest()
                         }
-                        showingAlert = true
+                        showAlert = true
                     }
                 }){
-                    Text("Add quest, next").font(.title3)
-                }.alert(isPresented: $showingAlert) {
+                    Text("Add quest").font(.title3)
+                }.alert(isPresented: $showAlert) {
                     Alert(title: Text("New quest!"), message: Text("A new quest is available."), dismissButton: .default(Text("Nice")))
                 }
                 Spacer()

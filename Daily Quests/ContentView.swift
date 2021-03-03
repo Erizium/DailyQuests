@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
 
+    @State private var showAlert = false
     var body: some View {
      
         NavigationView {
@@ -49,6 +50,20 @@ struct ContentView: View {
                             .offset(x: -70, y: -5)
                             .font(.title)
                     }
+                }
+                HStack {
+                    Spacer()
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.blue)
+                        .offset(y: 50)
+                        .onTapGesture {
+                            showAlert = true
+                        }.alert(isPresented: $showAlert) {
+                            Alert(title: Text("Daily Quest App"), message: Text("\nThis is an app where you can add daily activities as a 'Quest' and mark them completed as you clear your objectives throughout the day/week."))
+                        }
+                    Spacer()
                 }
             }.offset(y: -240)
         }
