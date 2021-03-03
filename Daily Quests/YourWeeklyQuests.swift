@@ -43,10 +43,24 @@ struct YourWeeklyQuests: View {
                     Spacer()
                 }
                 
+//                Text("\(timeString(time: timeRemaining))")
+//                    .padding()
+//                    .font(.title2)
+//                    .onAppear() {
+//                        timeUntilNextWeek()
+//                    }
+//                    .onReceive(timer){ _ in
+//
+//                        timeUntilNextWeek()
+//
+//                    }
+                
                 Spacer().frame(height: 50)
                 DisclosureGroup("This weeks quests      \(completedWeeklyQuests)/\(weeklys.count)", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
+                            
+                            Text("Swipe left or right to delete a quest").font(.system(size: 13))
                             ForEach(weeklys) { weekly in
                                 
                                 HStack {
@@ -72,11 +86,20 @@ struct YourWeeklyQuests: View {
                                     }
                                     Spacer()
                                     Text(weekly.name ?? "Unkown")
-                                        .onTapGesture {
-                                            viewContext.delete(weekly)
-                                            
-                                            try? viewContext.save()
-                                        }
+                                        .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
+                                                    .onEnded { value in
+                                                        let horizontalAmount = value.translation.width as CGFloat
+                                                        let verticalAmount = value.translation.height as CGFloat
+                                                        
+                                                        if abs(horizontalAmount) > abs(verticalAmount) {
+                                                            print(horizontalAmount < 0 ? "left swipe" : "right swipe")
+                                                        } else {
+                                                            print(verticalAmount < 0 ? "up swipe" : "down swipe")
+                                                        }
+                                                        viewContext.delete(weekly)
+                                                        try? viewContext.save()
+                                                        
+                                                    })
                                     Spacer()
                                 }
                                 
@@ -117,11 +140,21 @@ struct YourWeeklyQuests: View {
                                     }
                                     Spacer()
                                     Text(nextWeek.name ?? "Unkown")
-                                        .onTapGesture {
-                                            viewContext.delete(nextWeek)
-                                            
-                                            try? viewContext.save()
-                                        }
+                                        .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
+                                                    .onEnded { value in
+                                                        let horizontalAmount = value.translation.width as CGFloat
+                                                        let verticalAmount = value.translation.height as CGFloat
+                                                        
+                                                        if abs(horizontalAmount) > abs(verticalAmount) {
+                                                            print(horizontalAmount < 0 ? "left swipe" : "right swipe")
+                                                        } else {
+                                                            print(verticalAmount < 0 ? "up swipe" : "down swipe")
+                                                        }
+                                                       
+                                                        viewContext.delete(nextWeek)
+                                                        try? viewContext.save()
+                                                        
+                                                    })
                                     Spacer()
                                 }
                             }
@@ -147,10 +180,25 @@ struct YourWeeklyQuests: View {
             }.padding()
         }
     }
-}
-
-struct YourWeeklyQuests_Previews: PreviewProvider {
-    static var previews: some View {
-        YourWeeklyQuests()
+    func timeString(time: Int) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        return String(format: "%2i:%2i:%2i", hours, minutes, seconds)
+    }
+    
+    func timeUntilNextWeek() {
+        let startOfNextWeek = Calendar.current.firstWeekday
+        
+        //let untilNextWeek = startOfNextWeek
+        
+        timeRemaining = Int(startOfNextWeek)
     }
 }
+
+//struct YourWeeklyQuests_Previews: PreviewProvider {
+//    static var previews: some View {
+//        YourWeeklyQuests()
+//    }
+//}

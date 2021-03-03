@@ -16,6 +16,8 @@ struct AddQuest: View {
     @State private var selctedWeekly = false
     @State private var squareCheckedDaily = "square.dashed"
     @State private var squareCheckedWeekly = "square.dashed"
+    @State private var showingAlert = false
+    
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Daily.entity(), sortDescriptors: [
@@ -39,28 +41,28 @@ struct AddQuest: View {
                         Image(systemName: self.squareCheckedDaily)
                        
                         Spacer()
-                        Text("Daily Quest").onTapGesture {
-                            
-                            self.squareCheckedDaily = self.squareCheckedDaily == "square.dashed" ? "square.dashed.inset.fill" : "square.dashed"
-                            if self.squareCheckedDaily == "square.dashed.inset.fill" {
-                                self.squareCheckedWeekly = "square.dashed"
-                            }
-                        }
+                        Text("Daily Quest")
                         Spacer()
+                    }.onTapGesture {
+                        
+                        self.squareCheckedDaily = self.squareCheckedDaily == "square.dashed" ? "square.dashed.inset.fill" : "square.dashed"
+                        if self.squareCheckedDaily == "square.dashed.inset.fill" {
+                            self.squareCheckedWeekly = "square.dashed"
+                        }
                     }
                     
                     Spacer().frame(height: 10)
                     HStack {
                         Image(systemName: self.squareCheckedWeekly)
                         Spacer()
-                        Text("Weekly Quest").onTapGesture {
-                            
+                        Text("Weekly Quest")
+                        Spacer()
+                        }.onTapGesture {
                             self.squareCheckedWeekly = self.squareCheckedWeekly == "square.dashed" ? "square.dashed.inset.fill" : "square.dashed"
                             if self.squareCheckedWeekly == "square.dashed.inset.fill" {
                                 self.squareCheckedDaily = "square.dashed"
                             }
-                        }
-                        Spacer()
+                        
                     }
                 }.padding()
             }.padding()
@@ -80,13 +82,18 @@ struct AddQuest: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    if squareCheckedDaily == "square.dashed.inset.fill" {
-                        newDailyQuest()
-                    } else {
-                        newWeeklyQuest()
+                    if newQuest != "" {
+                        if squareCheckedDaily == "square.dashed.inset.fill" {
+                            newDailyQuest()
+                        } else {
+                            newWeeklyQuest()
+                        }
+                        showingAlert = true
                     }
                 }) {
                     Text("Add quest").font(.title3)
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text("New quest!"), message: Text("A new quest is available."), dismissButton: .default(Text("Nice")))
                 }
                 Spacer()
             }
@@ -103,13 +110,13 @@ struct AddQuest: View {
         daily.name = "\(newQuest)"
         daily.date = Date()
         
-        
         try? self.viewContext.save()
         
         if self.viewContext.hasChanges {
             print("New daily data available.")
         }
         newQuest = ""
+        
     }
     
     private func newWeeklyQuest() {

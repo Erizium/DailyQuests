@@ -22,11 +22,12 @@ struct YourDailyQuests: View {
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
     @State private var addNextQuest = false
+    @State private var showAlert = false
     @State private var completedDailyQuests = UserDefaults.standard.integer(forKey: "CompletedDaily")
-    //@State private var timeLeft = UserDefaults.standard.string(forKey: "timeLeft")
     
     @State private var timeRemaining = 24*60*60
     @State private var doneText = "Uncompleted"
+    
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
    
@@ -72,16 +73,16 @@ struct YourDailyQuests: View {
                         ScrollView {
                             VStack {
                                 Spacer()
+                                Text("Swipe left or right to delete a quest").font(.system(size: 13))
                                 ForEach(dailys) { daily in
                                     HStack {
                                         
                                         Button(action: {
                                             daily.done.toggle()
                                             
-                                            
-                                            
                                             if daily.done == true {
                                                 completedDailyQuests += 1
+                                                
                                                 
                                             } else {
                                                 completedDailyQuests -= 1
@@ -110,13 +111,23 @@ struct YourDailyQuests: View {
                                                     "square.dashed.inset.fill" : "square.dashed")
                                         }
                                         Spacer()
-                                        Text(daily.name ?? "Unknown").onTapGesture {
-                                            if daily.done == true {
-                                                completedDailyQuests -= 1
-                                            }
-                                            viewContext.delete(daily)
-                                            try? viewContext.save()
-                                        }
+                                        Text(daily.name ?? "Unknown")
+                                            .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
+                                                    .onEnded { value in
+                                                        let horizontalAmount = value.translation.width as CGFloat
+                                                        let verticalAmount = value.translation.height as CGFloat
+                                                        
+                                                        if abs(horizontalAmount) > abs(verticalAmount) {
+                                                            print(horizontalAmount < 0 ? "left swipe" : "right swipe")
+                                                        } else {
+                                                            print(verticalAmount < 0 ? "up swipe" : "down swipe")
+                                                        }
+                                                        if daily.done == true {
+                                                            completedDailyQuests -= 1
+                                                        }
+                                                        viewContext.delete(daily)
+                                                        try? viewContext.save()
+                                                    })
                                         Spacer()
                                     }
                                 }
@@ -153,10 +164,20 @@ struct YourDailyQuests: View {
                                             Image(systemName:  tomorrowDaily.done == true ? "square.dashed.inset.fill" : "square.dashed")
                                         }
                                         Spacer()
-                                        Text(tomorrowDaily.name ?? "Unknown").onTapGesture {
-                                            viewContext.delete(tomorrowDaily)
-                                            try? viewContext.save()
-                                        }
+                                        Text(tomorrowDaily.name ?? "Unknown")
+                                            .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .global)
+                                                        .onEnded { value in
+                                                            let horizontalAmount = value.translation.width as CGFloat
+                                                            let verticalAmount = value.translation.height as CGFloat
+                                                            
+                                                            if abs(horizontalAmount) > abs(verticalAmount) {
+                                                                print(horizontalAmount < 0 ? "left swipe" : "right swipe")
+                                                            } else {
+                                                                print(verticalAmount < 0 ? "up swipe" : "down swipe")
+                                                            }
+                                                            viewContext.delete(tomorrowDaily)
+                                                            try? viewContext.save()
+                                                        })
                                         Spacer()
                                     }
                                     

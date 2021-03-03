@@ -16,6 +16,7 @@ struct AddNextQuest: View {
     @State private var squareCheckedDaily = "square.dashed"
     @State private var squareCheckedWeekly = "square.dashed"
     @State private var newQuest = ""
+    @State private var showingAlert = false
     
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: TomorrowDaily.entity(), sortDescriptors: []) var tomorrowsDailys: FetchedResults<TomorrowDaily>
@@ -33,27 +34,27 @@ struct AddNextQuest: View {
                     HStack {
                         Image(systemName: squareCheckedDaily)
                         Spacer()
-                        
-                        Text("Tomorrow").onTapGesture {
+                        Text("Tomorrow")
+                        Spacer()
+                        }.onTapGesture {
                             squareCheckedDaily = squareCheckedDaily == "square.dashed" ? "square.dashed.inset.fill" : "square.dashed"
                             
                             if squareCheckedDaily == "square.dashed.inset.fill" {
                                 squareCheckedWeekly = "square.dashed"
                             }
-                        }
-                        Spacer()
+                        
                     }
                     Spacer().frame(height: 10)
                     HStack {
                         Image(systemName: squareCheckedWeekly)
                         Spacer()
-                        Text("Next Week").onTapGesture {
+                        Text("Next Week")
+                        Spacer()
+                        }.onTapGesture {
                             squareCheckedWeekly = squareCheckedWeekly == "square.dashed" ? "square.dashed.inset.fill" : "square.dashed"
                             if squareCheckedWeekly == "square.dashed.inset.fill" {
                                 squareCheckedDaily = "square.dashed"
                             }
-                        }
-                        Spacer()
                     }
                     
                 }.padding()
@@ -71,13 +72,18 @@ struct AddNextQuest: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    if squareCheckedDaily == "square.dashed.inset.fill" {
-                        newTomorrowsQuest()
-                    } else {
-                        newNextWeekQuest()
+                    if newQuest != "" {
+                        if squareCheckedDaily == "square.dashed.inset.fill" {
+                            newTomorrowsQuest()
+                        } else {
+                            newNextWeekQuest()
+                        }
+                        showingAlert = true
                     }
                 }){
                     Text("Add quest, next").font(.title3)
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text("New quest!"), message: Text("A new quest is available."), dismissButton: .default(Text("Nice")))
                 }
                 Spacer()
             }
