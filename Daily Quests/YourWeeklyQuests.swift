@@ -13,15 +13,16 @@ import CoreData
 struct YourWeeklyQuests: View {
     
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Weekly.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Weekly.date, ascending: false)])
+    @FetchRequest(entity: Weekly.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Weekly.date, ascending: true)])
         var weeklys: FetchedResults<Weekly>
-    @FetchRequest(entity: NextWeek.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \NextWeek.date, ascending: false)])
+    @FetchRequest(entity: NextWeek.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \NextWeek.date, ascending: true)])
         var nextWeek: FetchedResults<NextWeek>
     
     @State private var isExpanded = false
     @State private var isExpanded2 = false
     @State private var addNewQuest = false
     @State private var addNextQuest = false
+    @State private var showAlert = false
     @State private var completedWeeklyQuests = UserDefaults.standard.integer(forKey: "CompletedWeekly")
     
     @State private var timeRemaining = 24*60*60*7
@@ -36,10 +37,21 @@ struct YourWeeklyQuests: View {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Spacer()
-                    Text("Weekly Quests").font(.largeTitle)
+                    Text("Weekly Quests").font(.title)
                     Image("QuestLetter")
                         .resizable()
                         .frame(width: 100, height: 100)
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.blue)
+                        .onTapGesture {
+                        showAlert = true
+                    }.alert(isPresented: $showAlert){
+                        Alert(title: Text("Quest Guide"), message:
+                                Text("\n- Swipe left or right to delete a quest.\n- Click the square to clear a quest."),
+                                dismissButton: .default(Text("Thanks!")))
+                    }
                     Spacer()
                 }
                 
@@ -59,8 +71,6 @@ struct YourWeeklyQuests: View {
                 DisclosureGroup("This weeks quests      \(completedWeeklyQuests)/\(weeklys.count)", isExpanded: $isExpanded) {
                     ScrollView {
                         VStack {
-                            
-                            Text("Swipe left or right to delete a quest").font(.system(size: 13))
                             ForEach(weeklys) { weekly in
                                 
                                 HStack {

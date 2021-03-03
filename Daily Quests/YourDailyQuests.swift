@@ -8,14 +8,13 @@
 import SwiftUI
 import CoreData
 
-//sortera DisclosureGroup efter inläggningsdatum, lägga till datum i CoreData och gå efter det i "sortDescriptors: []".
 
 struct YourDailyQuests: View {
     
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Daily.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Daily.date, ascending: false)])
+    @FetchRequest(entity: Daily.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Daily.date, ascending: true)])
         var dailys: FetchedResults<Daily>
-    @FetchRequest(entity: TomorrowDaily.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Daily.date, ascending: false)])
+    @FetchRequest(entity: TomorrowDaily.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Daily.date, ascending: true)])
         var tomorrowDaily: FetchedResults<TomorrowDaily>
     
     @State private var isExpanded = false
@@ -35,17 +34,30 @@ struct YourDailyQuests: View {
     var body: some View {
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    
-                    HStack {
-                        Spacer()
-                        Text("Daily Quests").font(.largeTitle)
-                        Image("QuestLetter")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                        Spacer()
+                VStack(alignment: .leading) {
+                    VStack {
+                        Spacer().frame(height: 70)
+                        HStack {
+                            Spacer()
+                            Text("Daily Quests").font(.title)
+                            Image("QuestLetter")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                            Image(systemName: "questionmark.circle")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                showAlert = true
+                            }.alert(isPresented: $showAlert){
+                                Alert(title: Text("Quest Guide"), message:
+                                        Text("\n- Swipe left or right to delete a quest.\n- Click the square to clear a quest."),
+                                        dismissButton: .default(Text("Thanks!")))
+                            }
+                            Spacer()
+                        }
                     }
-                    Spacer().frame(height: 10)
+                    Spacer().frame(height: 20)
                     HStack {
                         Spacer()
                         Text("Until reset:").font(.title3)
@@ -67,16 +79,15 @@ struct YourDailyQuests: View {
                         Text("\(doneText)")
                         Spacer()
                     }
-                    Spacer().frame(height: 20)
+                    Spacer().frame(height: 50)
                         
                     DisclosureGroup("Todays Quests       \(completedDailyQuests)/\(dailys.count)", isExpanded: $isExpanded) {
                         ScrollView {
                             VStack {
                                 Spacer()
-                                Text("Swipe left or right to delete a quest").font(.system(size: 13))
                                 ForEach(dailys) { daily in
                                     HStack {
-                                        
+                                       
                                         Button(action: {
                                             daily.done.toggle()
                                             
@@ -203,7 +214,9 @@ struct YourDailyQuests: View {
                     .offset(x: 250)
                     
                 }.padding()
+                .offset(y: -100)
             }
+            
     }
     
     func timeString(time: Int) -> String {
@@ -222,13 +235,6 @@ struct YourDailyQuests: View {
         
         timeRemaining = Int(untilNextDay)
     }
-    
-//    func doneTextTrue() {
-//
-//        if completedDailyQuests == dailys.count {
-//            doneText = "Completed with \("timeLeft") left"
-//        }
-//    }
 }
 
 
@@ -237,20 +243,3 @@ struct YourDailyQuests_Previews: PreviewProvider {
         YourDailyQuests()
     }
 }
-
-//                                         .onTapGesture {
-//                                            viewContext.delete(daily)
-//                                            try? viewContext.save()
-//                                        }
-
-
-//            Button("Add") {
-//
-//                let rName = names.randomElement()!
-//
-//
-//                let daily = Daily(context: self.viewContext)
-//                daily.name = "\(rName)"
-//
-//                try? self.viewContext.save()
-//            }
